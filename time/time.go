@@ -43,8 +43,6 @@ type Offset interface {
 	FriendlyUniqueId() *string
 	Hour() *float64
 	Id() *string
-	SetId(val *string)
-	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -120,7 +118,6 @@ type Offset interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	ResetBaseRfc3339()
-	ResetId()
 	ResetOffsetDays()
 	ResetOffsetHours()
 	ResetOffsetMinutes()
@@ -271,16 +268,6 @@ func (j *jsiiProxy_Offset) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_Offset) IdInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"idInput",
 		&returns,
 	)
 	return returns
@@ -633,14 +620,6 @@ func (j *jsiiProxy_Offset) SetForEach(val cdktf.ITerraformIterator) {
 	)
 }
 
-func (j *jsiiProxy_Offset) SetId(val *string) {
-	_jsii_.Set(
-		j,
-		"id",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Offset) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
 	_jsii_.Set(
 		j,
@@ -918,14 +897,6 @@ func (o *jsiiProxy_Offset) ResetBaseRfc3339() {
 	)
 }
 
-func (o *jsiiProxy_Offset) ResetId() {
-	_jsii_.InvokeVoid(
-		o,
-		"resetId",
-		nil, // no parameters
-	)
-}
-
 func (o *jsiiProxy_Offset) ResetOffsetDays() {
 	_jsii_.InvokeVoid(
 		o,
@@ -1057,26 +1028,39 @@ type OffsetConfig struct {
 	Provider cdktf.TerraformProvider `field:"optional" json:"provider" yaml:"provider"`
 	// Experimental.
 	Provisioners *[]interface{} `field:"optional" json:"provisioners" yaml:"provisioners"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#base_rfc3339 Offset#base_rfc3339}.
-	BaseRfc3339 *string `field:"optional" json:"baseRfc3339" yaml:"baseRfc3339"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#id Offset#id}.
+	// Base timestamp in [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8) format (see [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) e.g., `YYYY-MM-DDTHH:MM:SSZ`). Defaults to the current time.
 	//
-	// Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
-	// If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
-	Id *string `field:"optional" json:"id" yaml:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_days Offset#offset_days}.
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#base_rfc3339 Offset#base_rfc3339}
+	BaseRfc3339 *string `field:"optional" json:"baseRfc3339" yaml:"baseRfc3339"`
+	// Number of days to offset the base timestamp. At least one of the 'offset_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_days Offset#offset_days}
 	OffsetDays *float64 `field:"optional" json:"offsetDays" yaml:"offsetDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_hours Offset#offset_hours}.
+	// Number of hours to offset the base timestamp. At least one of the 'offset_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_hours Offset#offset_hours}
 	OffsetHours *float64 `field:"optional" json:"offsetHours" yaml:"offsetHours"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_minutes Offset#offset_minutes}.
+	// Number of minutes to offset the base timestamp. At least one of the 'offset_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_minutes Offset#offset_minutes}
 	OffsetMinutes *float64 `field:"optional" json:"offsetMinutes" yaml:"offsetMinutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_months Offset#offset_months}.
+	// Number of months to offset the base timestamp. At least one of the 'offset_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_months Offset#offset_months}
 	OffsetMonths *float64 `field:"optional" json:"offsetMonths" yaml:"offsetMonths"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_seconds Offset#offset_seconds}.
+	// Number of seconds to offset the base timestamp. At least one of the 'offset_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_seconds Offset#offset_seconds}
 	OffsetSeconds *float64 `field:"optional" json:"offsetSeconds" yaml:"offsetSeconds"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_years Offset#offset_years}.
+	// Number of years to offset the base timestamp. At least one of the 'offset_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#offset_years Offset#offset_years}
 	OffsetYears *float64 `field:"optional" json:"offsetYears" yaml:"offsetYears"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#triggers Offset#triggers}.
+	// Arbitrary map of values that, when changed, will trigger a new base timestamp value to be saved.
+	//
+	// See [the main provider documentation](../index.md) for more information.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/offset#triggers Offset#triggers}
 	Triggers *map[string]*string `field:"optional" json:"triggers" yaml:"triggers"`
 }
 
@@ -1110,8 +1094,6 @@ type Rotating interface {
 	FriendlyUniqueId() *string
 	Hour() *float64
 	Id() *string
-	SetId(val *string)
-	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -1188,7 +1170,6 @@ type Rotating interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
-	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -1320,16 +1301,6 @@ func (j *jsiiProxy_Rotating) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_Rotating) IdInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"idInput",
 		&returns,
 	)
 	return returns
@@ -1684,14 +1655,6 @@ func (j *jsiiProxy_Rotating) SetForEach(val cdktf.ITerraformIterator) {
 	)
 }
 
-func (j *jsiiProxy_Rotating) SetId(val *string) {
-	_jsii_.Set(
-		j,
-		"id",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Rotating) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
 	_jsii_.Set(
 		j,
@@ -1969,14 +1932,6 @@ func (r *jsiiProxy_Rotating) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
-func (r *jsiiProxy_Rotating) ResetId() {
-	_jsii_.InvokeVoid(
-		r,
-		"resetId",
-		nil, // no parameters
-	)
-}
-
 func (r *jsiiProxy_Rotating) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		r,
@@ -2116,26 +2071,49 @@ type RotatingConfig struct {
 	Provider cdktf.TerraformProvider `field:"optional" json:"provider" yaml:"provider"`
 	// Experimental.
 	Provisioners *[]interface{} `field:"optional" json:"provisioners" yaml:"provisioners"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#id Rotating#id}.
+	// Base timestamp in [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8) format (see [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) e.g., `YYYY-MM-DDTHH:MM:SSZ`). Defaults to the current time.
 	//
-	// Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
-	// If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
-	Id *string `field:"optional" json:"id" yaml:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rfc3339 Rotating#rfc3339}.
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rfc3339 Rotating#rfc3339}
 	Rfc3339 *string `field:"optional" json:"rfc3339" yaml:"rfc3339"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_days Rotating#rotation_days}.
+	// Number of days to add to the base timestamp to configure the rotation timestamp.
+	//
+	// When the current time has passed the rotation timestamp, the resource will trigger recreation. At least one of the 'rotation_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_days Rotating#rotation_days}
 	RotationDays *float64 `field:"optional" json:"rotationDays" yaml:"rotationDays"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_hours Rotating#rotation_hours}.
+	// Number of hours to add to the base timestamp to configure the rotation timestamp.
+	//
+	// When the current time has passed the rotation timestamp, the resource will trigger recreation. At least one of the 'rotation_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_hours Rotating#rotation_hours}
 	RotationHours *float64 `field:"optional" json:"rotationHours" yaml:"rotationHours"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_minutes Rotating#rotation_minutes}.
+	// Number of minutes to add to the base timestamp to configure the rotation timestamp.
+	//
+	// When the current time has passed the rotation timestamp, the resource will trigger recreation. At least one of the 'rotation_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_minutes Rotating#rotation_minutes}
 	RotationMinutes *float64 `field:"optional" json:"rotationMinutes" yaml:"rotationMinutes"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_months Rotating#rotation_months}.
+	// Number of months to add to the base timestamp to configure the rotation timestamp.
+	//
+	// When the current time has passed the rotation timestamp, the resource will trigger recreation. At least one of the 'rotation_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_months Rotating#rotation_months}
 	RotationMonths *float64 `field:"optional" json:"rotationMonths" yaml:"rotationMonths"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_rfc3339 Rotating#rotation_rfc3339}.
+	// Configure the rotation timestamp with an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8) format of the offset timestamp. When the current time has passed the rotation timestamp, the resource will trigger recreation. At least one of the 'rotation_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_rfc3339 Rotating#rotation_rfc3339}
 	RotationRfc3339 *string `field:"optional" json:"rotationRfc3339" yaml:"rotationRfc3339"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_years Rotating#rotation_years}.
+	// Number of years to add to the base timestamp to configure the rotation timestamp.
+	//
+	// When the current time has passed the rotation timestamp, the resource will trigger recreation. At least one of the 'rotation_' arguments must be configured.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#rotation_years Rotating#rotation_years}
 	RotationYears *float64 `field:"optional" json:"rotationYears" yaml:"rotationYears"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#triggers Rotating#triggers}.
+	// Arbitrary map of values that, when changed, will trigger a new base timestamp value to be saved.
+	//
+	// These conditions recreate the resource in addition to other rotation arguments. See [the main provider documentation](../index.md) for more information.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/rotating#triggers Rotating#triggers}
 	Triggers *map[string]*string `field:"optional" json:"triggers" yaml:"triggers"`
 }
 
@@ -2173,8 +2151,6 @@ type Sleep interface {
 	// Experimental.
 	FriendlyUniqueId() *string
 	Id() *string
-	SetId(val *string)
-	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -2227,7 +2203,6 @@ type Sleep interface {
 	OverrideLogicalId(newLogicalId *string)
 	ResetCreateDuration()
 	ResetDestroyDuration()
-	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -2372,16 +2347,6 @@ func (j *jsiiProxy_Sleep) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_Sleep) IdInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"idInput",
 		&returns,
 	)
 	return returns
@@ -2558,14 +2523,6 @@ func (j *jsiiProxy_Sleep) SetForEach(val cdktf.ITerraformIterator) {
 	_jsii_.Set(
 		j,
 		"forEach",
-		val,
-	)
-}
-
-func (j *jsiiProxy_Sleep) SetId(val *string) {
-	_jsii_.Set(
-		j,
-		"id",
 		val,
 	)
 }
@@ -2807,14 +2764,6 @@ func (s *jsiiProxy_Sleep) ResetDestroyDuration() {
 	)
 }
 
-func (s *jsiiProxy_Sleep) ResetId() {
-	_jsii_.InvokeVoid(
-		s,
-		"resetId",
-		nil, // no parameters
-	)
-}
-
 func (s *jsiiProxy_Sleep) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		s,
@@ -2898,16 +2847,19 @@ type SleepConfig struct {
 	Provider cdktf.TerraformProvider `field:"optional" json:"provider" yaml:"provider"`
 	// Experimental.
 	Provisioners *[]interface{} `field:"optional" json:"provisioners" yaml:"provisioners"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/sleep#create_duration Sleep#create_duration}.
-	CreateDuration *string `field:"optional" json:"createDuration" yaml:"createDuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/sleep#destroy_duration Sleep#destroy_duration}.
-	DestroyDuration *string `field:"optional" json:"destroyDuration" yaml:"destroyDuration"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/sleep#id Sleep#id}.
+	// [Time duration](https://golang.org/pkg/time/#ParseDuration) to delay resource creation. For example, `30s` for 30 seconds or `5m` for 5 minutes. Updating this value by itself will not trigger a delay.
 	//
-	// Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
-	// If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
-	Id *string `field:"optional" json:"id" yaml:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/sleep#triggers Sleep#triggers}.
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/sleep#create_duration Sleep#create_duration}
+	CreateDuration *string `field:"optional" json:"createDuration" yaml:"createDuration"`
+	// [Time duration](https://golang.org/pkg/time/#ParseDuration) to delay resource destroy. For example, `30s` for 30 seconds or `5m` for 5 minutes. Updating this value by itself will not trigger a delay. This value or any updates to it must be successfully applied into the Terraform state before destroying this resource to take effect.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/sleep#destroy_duration Sleep#destroy_duration}
+	DestroyDuration *string `field:"optional" json:"destroyDuration" yaml:"destroyDuration"`
+	// (Optional) Arbitrary map of values that, when changed, will run any creation or destroy delays again.
+	//
+	// See [the main provider documentation](../index.md) for more information.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/sleep#triggers Sleep#triggers}
 	Triggers *map[string]*string `field:"optional" json:"triggers" yaml:"triggers"`
 }
 
@@ -2941,8 +2893,6 @@ type Static interface {
 	FriendlyUniqueId() *string
 	Hour() *float64
 	Id() *string
-	SetId(val *string)
-	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -3001,7 +2951,6 @@ type Static interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
-	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -3127,16 +3076,6 @@ func (j *jsiiProxy_Static) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_Static) IdInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"idInput",
 		&returns,
 	)
 	return returns
@@ -3371,14 +3310,6 @@ func (j *jsiiProxy_Static) SetForEach(val cdktf.ITerraformIterator) {
 	)
 }
 
-func (j *jsiiProxy_Static) SetId(val *string) {
-	_jsii_.Set(
-		j,
-		"id",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Static) SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
 	_jsii_.Set(
 		j,
@@ -3608,14 +3539,6 @@ func (s *jsiiProxy_Static) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
-func (s *jsiiProxy_Static) ResetId() {
-	_jsii_.InvokeVoid(
-		s,
-		"resetId",
-		nil, // no parameters
-	)
-}
-
 func (s *jsiiProxy_Static) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		s,
@@ -3707,14 +3630,15 @@ type StaticConfig struct {
 	Provider cdktf.TerraformProvider `field:"optional" json:"provider" yaml:"provider"`
 	// Experimental.
 	Provisioners *[]interface{} `field:"optional" json:"provisioners" yaml:"provisioners"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/static#id Static#id}.
+	// Base timestamp in [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8) format (see [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) e.g., `YYYY-MM-DDTHH:MM:SSZ`). Defaults to the current time.
 	//
-	// Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
-	// If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
-	Id *string `field:"optional" json:"id" yaml:"id"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/static#rfc3339 Static#rfc3339}.
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/static#rfc3339 Static#rfc3339}
 	Rfc3339 *string `field:"optional" json:"rfc3339" yaml:"rfc3339"`
-	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/static#triggers Static#triggers}.
+	// Arbitrary map of values that, when changed, will trigger a new base timestamp value to be saved.
+	//
+	// See [the main provider documentation](../index.md) for more information.
+	//
+	// Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/time/r/static#triggers Static#triggers}
 	Triggers *map[string]*string `field:"optional" json:"triggers" yaml:"triggers"`
 }
 
