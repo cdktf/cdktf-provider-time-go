@@ -185,6 +185,9 @@ func (j *jsiiProxy_TimeProvider) TerraformResourceType() *string {
 func NewTimeProvider(scope constructs.Construct, id *string, config *TimeProviderConfig) TimeProvider {
 	_init_.Initialize()
 
+	if err := validateNewTimeProviderParameters(scope, id, config); err != nil {
+		panic(err)
+	}
 	j := jsiiProxy_TimeProvider{}
 
 	_jsii_.Create(
@@ -207,7 +210,7 @@ func NewTimeProvider_Override(t TimeProvider, scope constructs.Construct, id *st
 	)
 }
 
-func (j *jsiiProxy_TimeProvider) SetAlias(val *string) {
+func (j *jsiiProxy_TimeProvider)SetAlias(val *string) {
 	_jsii_.Set(
 		j,
 		"alias",
@@ -235,6 +238,9 @@ func (j *jsiiProxy_TimeProvider) SetAlias(val *string) {
 func TimeProvider_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 
+	if err := validateTimeProvider_IsConstructParameters(x); err != nil {
+		panic(err)
+	}
 	var returns *bool
 
 	_jsii_.StaticInvoke(
@@ -259,6 +265,9 @@ func TimeProvider_TfResourceType() *string {
 }
 
 func (t *jsiiProxy_TimeProvider) AddOverride(path *string, value interface{}) {
+	if err := t.validateAddOverrideParameters(path, value); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		t,
 		"addOverride",
@@ -267,6 +276,9 @@ func (t *jsiiProxy_TimeProvider) AddOverride(path *string, value interface{}) {
 }
 
 func (t *jsiiProxy_TimeProvider) OverrideLogicalId(newLogicalId *string) {
+	if err := t.validateOverrideLogicalIdParameters(newLogicalId); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		t,
 		"overrideLogicalId",
