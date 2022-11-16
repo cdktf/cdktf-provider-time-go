@@ -56,6 +56,14 @@ func validateSleep_IsConstructParameters(x interface{}) error {
 	return nil
 }
 
+func validateSleep_IsTerraformElementParameters(x interface{}) error {
+	return nil
+}
+
+func validateSleep_IsTerraformResourceParameters(x interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_Sleep) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }

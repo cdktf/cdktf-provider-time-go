@@ -56,6 +56,14 @@ func validateOffset_IsConstructParameters(x interface{}) error {
 	return nil
 }
 
+func validateOffset_IsTerraformElementParameters(x interface{}) error {
+	return nil
+}
+
+func validateOffset_IsTerraformResourceParameters(x interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_Offset) validateSetBaseRfc3339Parameters(val *string) error {
 	return nil
 }

@@ -38,6 +38,22 @@ func validateTimeProvider_IsConstructParameters(x interface{}) error {
 	return nil
 }
 
+func validateTimeProvider_IsTerraformElementParameters(x interface{}) error {
+	if x == nil {
+		return fmt.Errorf("parameter x is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func validateTimeProvider_IsTerraformProviderParameters(x interface{}) error {
+	if x == nil {
+		return fmt.Errorf("parameter x is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func validateNewTimeProviderParameters(scope constructs.Construct, id *string, config *TimeProviderConfig) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")

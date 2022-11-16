@@ -16,6 +16,14 @@ func validateTimeProvider_IsConstructParameters(x interface{}) error {
 	return nil
 }
 
+func validateTimeProvider_IsTerraformElementParameters(x interface{}) error {
+	return nil
+}
+
+func validateTimeProvider_IsTerraformProviderParameters(x interface{}) error {
+	return nil
+}
+
 func validateNewTimeProviderParameters(scope constructs.Construct, id *string, config *TimeProviderConfig) error {
 	return nil
 }
