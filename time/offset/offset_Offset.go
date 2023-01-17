@@ -2,10 +2,10 @@ package offset
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v4/jsii"
+	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v5/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/cdktf/cdktf-provider-time-go/time/v4/offset/internal"
+	"github.com/cdktf/cdktf-provider-time-go/time/v5/offset/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
