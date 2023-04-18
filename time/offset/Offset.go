@@ -2,14 +2,14 @@ package offset
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v5/jsii"
+	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v6/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/cdktf/cdktf-provider-time-go/time/v5/offset/internal"
+	"github.com/cdktf/cdktf-provider-time-go/time/v6/offset/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/time/r/offset time_offset}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/offset time_offset}.
 type Offset interface {
 	cdktf.TerraformResource
 	BaseRfc3339() *string
@@ -24,9 +24,9 @@ type Offset interface {
 	// Experimental.
 	ConstructNodeMetadata() *map[string]interface{}
 	// Experimental.
-	Count() *float64
+	Count() interface{}
 	// Experimental.
-	SetCount(val *float64)
+	SetCount(val interface{})
 	Day() *float64
 	// Experimental.
 	DependsOn() *[]*string
@@ -192,8 +192,8 @@ func (j *jsiiProxy_Offset) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Offset) Count() *float64 {
-	var returns *float64
+func (j *jsiiProxy_Offset) Count() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"count",
@@ -553,7 +553,7 @@ func (j *jsiiProxy_Offset) Year() *float64 {
 }
 
 
-// Create a new {@link https://www.terraform.io/docs/providers/time/r/offset time_offset} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/offset time_offset} Resource.
 func NewOffset(scope constructs.Construct, id *string, config *OffsetConfig) Offset {
 	_init_.Initialize()
 
@@ -571,7 +571,7 @@ func NewOffset(scope constructs.Construct, id *string, config *OffsetConfig) Off
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/time/r/offset time_offset} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/offset time_offset} Resource.
 func NewOffset_Override(o Offset, scope constructs.Construct, id *string, config *OffsetConfig) {
 	_init_.Initialize()
 
@@ -604,7 +604,10 @@ func (j *jsiiProxy_Offset)SetConnection(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Offset)SetCount(val *float64) {
+func (j *jsiiProxy_Offset)SetCount(val interface{}) {
+	if err := j.validateSetCountParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"count",

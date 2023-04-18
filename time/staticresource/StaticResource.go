@@ -2,14 +2,14 @@ package staticresource
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v5/jsii"
+	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v6/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/cdktf/cdktf-provider-time-go/time/v5/staticresource/internal"
+	"github.com/cdktf/cdktf-provider-time-go/time/v6/staticresource/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/time/r/static time_static}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/static time_static}.
 type StaticResource interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -21,9 +21,9 @@ type StaticResource interface {
 	// Experimental.
 	ConstructNodeMetadata() *map[string]interface{}
 	// Experimental.
-	Count() *float64
+	Count() interface{}
 	// Experimental.
-	SetCount(val *float64)
+	SetCount(val interface{})
 	Day() *float64
 	// Experimental.
 	DependsOn() *[]*string
@@ -147,8 +147,8 @@ func (j *jsiiProxy_StaticResource) ConstructNodeMetadata() *map[string]interface
 	return returns
 }
 
-func (j *jsiiProxy_StaticResource) Count() *float64 {
-	var returns *float64
+func (j *jsiiProxy_StaticResource) Count() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"count",
@@ -398,7 +398,7 @@ func (j *jsiiProxy_StaticResource) Year() *float64 {
 }
 
 
-// Create a new {@link https://www.terraform.io/docs/providers/time/r/static time_static} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/static time_static} Resource.
 func NewStaticResource(scope constructs.Construct, id *string, config *StaticResourceConfig) StaticResource {
 	_init_.Initialize()
 
@@ -416,7 +416,7 @@ func NewStaticResource(scope constructs.Construct, id *string, config *StaticRes
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/time/r/static time_static} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/static time_static} Resource.
 func NewStaticResource_Override(s StaticResource, scope constructs.Construct, id *string, config *StaticResourceConfig) {
 	_init_.Initialize()
 
@@ -438,7 +438,10 @@ func (j *jsiiProxy_StaticResource)SetConnection(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_StaticResource)SetCount(val *float64) {
+func (j *jsiiProxy_StaticResource)SetCount(val interface{}) {
+	if err := j.validateSetCountParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"count",

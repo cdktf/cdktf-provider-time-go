@@ -2,14 +2,14 @@ package sleep
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v5/jsii"
+	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v6/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/cdktf/cdktf-provider-time-go/time/v5/sleep/internal"
+	"github.com/cdktf/cdktf-provider-time-go/time/v6/sleep/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/time/r/sleep time_sleep}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/sleep time_sleep}.
 type Sleep interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -21,9 +21,9 @@ type Sleep interface {
 	// Experimental.
 	ConstructNodeMetadata() *map[string]interface{}
 	// Experimental.
-	Count() *float64
+	Count() interface{}
 	// Experimental.
-	SetCount(val *float64)
+	SetCount(val interface{})
 	CreateDuration() *string
 	SetCreateDuration(val *string)
 	CreateDurationInput() *string
@@ -144,8 +144,8 @@ func (j *jsiiProxy_Sleep) ConstructNodeMetadata() *map[string]interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_Sleep) Count() *float64 {
-	var returns *float64
+func (j *jsiiProxy_Sleep) Count() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"count",
@@ -345,7 +345,7 @@ func (j *jsiiProxy_Sleep) TriggersInput() *map[string]*string {
 }
 
 
-// Create a new {@link https://www.terraform.io/docs/providers/time/r/sleep time_sleep} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/sleep time_sleep} Resource.
 func NewSleep(scope constructs.Construct, id *string, config *SleepConfig) Sleep {
 	_init_.Initialize()
 
@@ -363,7 +363,7 @@ func NewSleep(scope constructs.Construct, id *string, config *SleepConfig) Sleep
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/time/r/sleep time_sleep} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/sleep time_sleep} Resource.
 func NewSleep_Override(s Sleep, scope constructs.Construct, id *string, config *SleepConfig) {
 	_init_.Initialize()
 
@@ -385,7 +385,10 @@ func (j *jsiiProxy_Sleep)SetConnection(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_Sleep)SetCount(val *float64) {
+func (j *jsiiProxy_Sleep)SetCount(val interface{}) {
+	if err := j.validateSetCountParameters(val); err != nil {
+		panic(err)
+	}
 	_jsii_.Set(
 		j,
 		"count",

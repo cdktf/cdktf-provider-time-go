@@ -1,6 +1,6 @@
 //go:build !no_runtime_type_checking
 
-package sleep
+package rotating
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-func (s *jsiiProxy_Sleep) validateAddOverrideParameters(path *string, value interface{}) error {
+func (r *jsiiProxy_Rotating) validateAddOverrideParameters(path *string, value interface{}) error {
 	if path == nil {
 		return fmt.Errorf("parameter path is required, but nil was provided")
 	}
@@ -23,7 +23,7 @@ func (s *jsiiProxy_Sleep) validateAddOverrideParameters(path *string, value inte
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateGetAnyMapAttributeParameters(terraformAttribute *string) error {
+func (r *jsiiProxy_Rotating) validateGetAnyMapAttributeParameters(terraformAttribute *string) error {
 	if terraformAttribute == nil {
 		return fmt.Errorf("parameter terraformAttribute is required, but nil was provided")
 	}
@@ -31,7 +31,7 @@ func (s *jsiiProxy_Sleep) validateGetAnyMapAttributeParameters(terraformAttribut
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateGetBooleanAttributeParameters(terraformAttribute *string) error {
+func (r *jsiiProxy_Rotating) validateGetBooleanAttributeParameters(terraformAttribute *string) error {
 	if terraformAttribute == nil {
 		return fmt.Errorf("parameter terraformAttribute is required, but nil was provided")
 	}
@@ -39,7 +39,7 @@ func (s *jsiiProxy_Sleep) validateGetBooleanAttributeParameters(terraformAttribu
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateGetBooleanMapAttributeParameters(terraformAttribute *string) error {
+func (r *jsiiProxy_Rotating) validateGetBooleanMapAttributeParameters(terraformAttribute *string) error {
 	if terraformAttribute == nil {
 		return fmt.Errorf("parameter terraformAttribute is required, but nil was provided")
 	}
@@ -47,7 +47,7 @@ func (s *jsiiProxy_Sleep) validateGetBooleanMapAttributeParameters(terraformAttr
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateGetListAttributeParameters(terraformAttribute *string) error {
+func (r *jsiiProxy_Rotating) validateGetListAttributeParameters(terraformAttribute *string) error {
 	if terraformAttribute == nil {
 		return fmt.Errorf("parameter terraformAttribute is required, but nil was provided")
 	}
@@ -55,7 +55,7 @@ func (s *jsiiProxy_Sleep) validateGetListAttributeParameters(terraformAttribute 
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateGetNumberAttributeParameters(terraformAttribute *string) error {
+func (r *jsiiProxy_Rotating) validateGetNumberAttributeParameters(terraformAttribute *string) error {
 	if terraformAttribute == nil {
 		return fmt.Errorf("parameter terraformAttribute is required, but nil was provided")
 	}
@@ -63,7 +63,7 @@ func (s *jsiiProxy_Sleep) validateGetNumberAttributeParameters(terraformAttribut
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateGetNumberListAttributeParameters(terraformAttribute *string) error {
+func (r *jsiiProxy_Rotating) validateGetNumberListAttributeParameters(terraformAttribute *string) error {
 	if terraformAttribute == nil {
 		return fmt.Errorf("parameter terraformAttribute is required, but nil was provided")
 	}
@@ -71,7 +71,7 @@ func (s *jsiiProxy_Sleep) validateGetNumberListAttributeParameters(terraformAttr
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateGetNumberMapAttributeParameters(terraformAttribute *string) error {
+func (r *jsiiProxy_Rotating) validateGetNumberMapAttributeParameters(terraformAttribute *string) error {
 	if terraformAttribute == nil {
 		return fmt.Errorf("parameter terraformAttribute is required, but nil was provided")
 	}
@@ -79,7 +79,7 @@ func (s *jsiiProxy_Sleep) validateGetNumberMapAttributeParameters(terraformAttri
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateGetStringAttributeParameters(terraformAttribute *string) error {
+func (r *jsiiProxy_Rotating) validateGetStringAttributeParameters(terraformAttribute *string) error {
 	if terraformAttribute == nil {
 		return fmt.Errorf("parameter terraformAttribute is required, but nil was provided")
 	}
@@ -87,7 +87,7 @@ func (s *jsiiProxy_Sleep) validateGetStringAttributeParameters(terraformAttribut
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateGetStringMapAttributeParameters(terraformAttribute *string) error {
+func (r *jsiiProxy_Rotating) validateGetStringMapAttributeParameters(terraformAttribute *string) error {
 	if terraformAttribute == nil {
 		return fmt.Errorf("parameter terraformAttribute is required, but nil was provided")
 	}
@@ -95,7 +95,7 @@ func (s *jsiiProxy_Sleep) validateGetStringMapAttributeParameters(terraformAttri
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateInterpolationForAttributeParameters(terraformAttribute *string) error {
+func (r *jsiiProxy_Rotating) validateInterpolationForAttributeParameters(terraformAttribute *string) error {
 	if terraformAttribute == nil {
 		return fmt.Errorf("parameter terraformAttribute is required, but nil was provided")
 	}
@@ -103,7 +103,7 @@ func (s *jsiiProxy_Sleep) validateInterpolationForAttributeParameters(terraformA
 	return nil
 }
 
-func (s *jsiiProxy_Sleep) validateOverrideLogicalIdParameters(newLogicalId *string) error {
+func (r *jsiiProxy_Rotating) validateOverrideLogicalIdParameters(newLogicalId *string) error {
 	if newLogicalId == nil {
 		return fmt.Errorf("parameter newLogicalId is required, but nil was provided")
 	}
@@ -111,7 +111,7 @@ func (s *jsiiProxy_Sleep) validateOverrideLogicalIdParameters(newLogicalId *stri
 	return nil
 }
 
-func validateSleep_IsConstructParameters(x interface{}) error {
+func validateRotating_IsConstructParameters(x interface{}) error {
 	if x == nil {
 		return fmt.Errorf("parameter x is required, but nil was provided")
 	}
@@ -119,7 +119,7 @@ func validateSleep_IsConstructParameters(x interface{}) error {
 	return nil
 }
 
-func validateSleep_IsTerraformElementParameters(x interface{}) error {
+func validateRotating_IsTerraformElementParameters(x interface{}) error {
 	if x == nil {
 		return fmt.Errorf("parameter x is required, but nil was provided")
 	}
@@ -127,7 +127,7 @@ func validateSleep_IsTerraformElementParameters(x interface{}) error {
 	return nil
 }
 
-func validateSleep_IsTerraformResourceParameters(x interface{}) error {
+func validateRotating_IsTerraformResourceParameters(x interface{}) error {
 	if x == nil {
 		return fmt.Errorf("parameter x is required, but nil was provided")
 	}
@@ -135,7 +135,7 @@ func validateSleep_IsTerraformResourceParameters(x interface{}) error {
 	return nil
 }
 
-func (j *jsiiProxy_Sleep) validateSetConnectionParameters(val interface{}) error {
+func (j *jsiiProxy_Rotating) validateSetConnectionParameters(val interface{}) error {
 	switch val.(type) {
 	case *cdktf.SSHProvisionerConnection:
 		val := val.(*cdktf.SSHProvisionerConnection)
@@ -168,23 +168,64 @@ func (j *jsiiProxy_Sleep) validateSetConnectionParameters(val interface{}) error
 	return nil
 }
 
-func (j *jsiiProxy_Sleep) validateSetCreateDurationParameters(val *string) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
+func (j *jsiiProxy_Rotating) validateSetCountParameters(val interface{}) error {
+	switch val.(type) {
+	case *float64:
+		// ok
+	case float64:
+		// ok
+	case *int:
+		// ok
+	case int:
+		// ok
+	case *uint:
+		// ok
+	case uint:
+		// ok
+	case *int8:
+		// ok
+	case int8:
+		// ok
+	case *int16:
+		// ok
+	case int16:
+		// ok
+	case *int32:
+		// ok
+	case int32:
+		// ok
+	case *int64:
+		// ok
+	case int64:
+		// ok
+	case *uint8:
+		// ok
+	case uint8:
+		// ok
+	case *uint16:
+		// ok
+	case uint16:
+		// ok
+	case *uint32:
+		// ok
+	case uint32:
+		// ok
+	case *uint64:
+		// ok
+	case uint64:
+		// ok
+	case cdktf.TerraformCount:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *float64, cdktf.TerraformCount; received %#v (a %T)", val, val)
+		}
 	}
 
 	return nil
 }
 
-func (j *jsiiProxy_Sleep) validateSetDestroyDurationParameters(val *string) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_Sleep) validateSetLifecycleParameters(val *cdktf.TerraformResourceLifecycle) error {
+func (j *jsiiProxy_Rotating) validateSetLifecycleParameters(val *cdktf.TerraformResourceLifecycle) error {
 	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
 		return err
 	}
@@ -192,7 +233,7 @@ func (j *jsiiProxy_Sleep) validateSetLifecycleParameters(val *cdktf.TerraformRes
 	return nil
 }
 
-func (j *jsiiProxy_Sleep) validateSetProvisionersParameters(val *[]interface{}) error {
+func (j *jsiiProxy_Rotating) validateSetProvisionersParameters(val *[]interface{}) error {
 	for idx_97dfc6, v := range *val {
 		switch v.(type) {
 		case *cdktf.FileProvisioner:
@@ -238,7 +279,7 @@ func (j *jsiiProxy_Sleep) validateSetProvisionersParameters(val *[]interface{}) 
 	return nil
 }
 
-func (j *jsiiProxy_Sleep) validateSetTriggersParameters(val *map[string]*string) error {
+func (j *jsiiProxy_Rotating) validateSetRfc3339Parameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -246,7 +287,63 @@ func (j *jsiiProxy_Sleep) validateSetTriggersParameters(val *map[string]*string)
 	return nil
 }
 
-func validateNewSleepParameters(scope constructs.Construct, id *string, config *SleepConfig) error {
+func (j *jsiiProxy_Rotating) validateSetRotationDaysParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_Rotating) validateSetRotationHoursParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_Rotating) validateSetRotationMinutesParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_Rotating) validateSetRotationMonthsParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_Rotating) validateSetRotationRfc3339Parameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_Rotating) validateSetRotationYearsParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_Rotating) validateSetTriggersParameters(val *map[string]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func validateNewRotatingParameters(scope constructs.Construct, id *string, config *RotatingConfig) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")
 	}

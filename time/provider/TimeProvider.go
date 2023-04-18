@@ -2,14 +2,14 @@ package provider
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v5/jsii"
+	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v6/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/cdktf/cdktf-provider-time-go/time/v5/provider/internal"
+	"github.com/cdktf/cdktf-provider-time-go/time/v6/provider/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://www.terraform.io/docs/providers/time time}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs time}.
 type TimeProvider interface {
 	cdktf.TerraformProvider
 	Alias() *string
@@ -180,7 +180,7 @@ func (j *jsiiProxy_TimeProvider) TerraformResourceType() *string {
 }
 
 
-// Create a new {@link https://www.terraform.io/docs/providers/time time} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs time} Resource.
 func NewTimeProvider(scope constructs.Construct, id *string, config *TimeProviderConfig) TimeProvider {
 	_init_.Initialize()
 
@@ -198,7 +198,7 @@ func NewTimeProvider(scope constructs.Construct, id *string, config *TimeProvide
 	return &j
 }
 
-// Create a new {@link https://www.terraform.io/docs/providers/time time} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs time} Resource.
 func NewTimeProvider_Override(t TimeProvider, scope constructs.Construct, id *string, config *TimeProviderConfig) {
 	_init_.Initialize()
 
