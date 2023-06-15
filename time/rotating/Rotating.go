@@ -2,10 +2,10 @@ package rotating
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v6/jsii"
+	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v7/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/cdktf/cdktf-provider-time-go/time/v6/rotating/internal"
+	"github.com/cdktf/cdktf-provider-time-go/time/v7/rotating/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
