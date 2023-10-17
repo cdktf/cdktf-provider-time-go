@@ -7,6 +7,10 @@ package rotating
 
 // Building without runtime type checking enabled, so all the below just return nil
 
+func (r *jsiiProxy_Rotating) validateAddMoveTargetParameters(moveTarget *string) error {
+	return nil
+}
+
 func (r *jsiiProxy_Rotating) validateAddOverrideParameters(path *string, value interface{}) error {
 	return nil
 }
@@ -47,11 +51,23 @@ func (r *jsiiProxy_Rotating) validateGetStringMapAttributeParameters(terraformAt
 	return nil
 }
 
+func (r *jsiiProxy_Rotating) validateImportFromParameters(id *string) error {
+	return nil
+}
+
 func (r *jsiiProxy_Rotating) validateInterpolationForAttributeParameters(terraformAttribute *string) error {
 	return nil
 }
 
+func (r *jsiiProxy_Rotating) validateMoveToParameters(moveTarget *string, index interface{}) error {
+	return nil
+}
+
 func (r *jsiiProxy_Rotating) validateOverrideLogicalIdParameters(newLogicalId *string) error {
+	return nil
+}
+
+func validateRotating_GenerateConfigForImportParameters(scope constructs.Construct, importToId *string, importFromId *string) error {
 	return nil
 }
 
