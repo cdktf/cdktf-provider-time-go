@@ -12,7 +12,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/time/0.9.2/docs/resources/rotating time_rotating}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/time/0.10.0/docs/resources/rotating time_rotating}.
 type Rotating interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -563,7 +563,7 @@ func (j *jsiiProxy_Rotating) Year() *float64 {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.9.2/docs/resources/rotating time_rotating} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.10.0/docs/resources/rotating time_rotating} Resource.
 func NewRotating(scope constructs.Construct, id *string, config *RotatingConfig) Rotating {
 	_init_.Initialize()
 
@@ -581,7 +581,7 @@ func NewRotating(scope constructs.Construct, id *string, config *RotatingConfig)
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.9.2/docs/resources/rotating time_rotating} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.10.0/docs/resources/rotating time_rotating} Resource.
 func NewRotating_Override(r Rotating, scope constructs.Construct, id *string, config *RotatingConfig) {
 	_init_.Initialize()
 
