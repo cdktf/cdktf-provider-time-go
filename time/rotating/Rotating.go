@@ -5,10 +5,10 @@ package rotating
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v9/jsii"
+	_init_ "github.com/cdktf/cdktf-provider-time-go/time/v10/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/cdktf/cdktf-provider-time-go/time/v9/rotating/internal"
+	"github.com/cdktf/cdktf-provider-time-go/time/v10/rotating/internal"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
@@ -148,6 +148,9 @@ type Rotating interface {
 	ResetRotationYears()
 	ResetTriggers()
 	SynthesizeAttributes() *map[string]interface{}
+	SynthesizeHclAttributes() *map[string]interface{}
+	// Experimental.
+	ToHclTerraform() interface{}
 	// Experimental.
 	ToMetadata() interface{}
 	// Returns a string representation of this construct.
@@ -1179,6 +1182,32 @@ func (r *jsiiProxy_Rotating) SynthesizeAttributes() *map[string]interface{} {
 	_jsii_.Invoke(
 		r,
 		"synthesizeAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Rotating) SynthesizeHclAttributes() *map[string]interface{} {
+	var returns *map[string]interface{}
+
+	_jsii_.Invoke(
+		r,
+		"synthesizeHclAttributes",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Rotating) ToHclTerraform() interface{} {
+	var returns interface{}
+
+	_jsii_.Invoke(
+		r,
+		"toHclTerraform",
 		nil, // no parameters
 		&returns,
 	)
