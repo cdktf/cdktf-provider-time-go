@@ -12,7 +12,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/time/0.11.2/docs/resources/offset time_offset}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/time/0.12.0/docs/resources/offset time_offset}.
 type Offset interface {
 	cdktf.TerraformResource
 	BaseRfc3339() *string
@@ -577,7 +577,7 @@ func (j *jsiiProxy_Offset) Year() *float64 {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.11.2/docs/resources/offset time_offset} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.12.0/docs/resources/offset time_offset} Resource.
 func NewOffset(scope constructs.Construct, id *string, config *OffsetConfig) Offset {
 	_init_.Initialize()
 
@@ -595,7 +595,7 @@ func NewOffset(scope constructs.Construct, id *string, config *OffsetConfig) Off
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.11.2/docs/resources/offset time_offset} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/time/0.12.0/docs/resources/offset time_offset} Resource.
 func NewOffset_Override(o Offset, scope constructs.Construct, id *string, config *OffsetConfig) {
 	_init_.Initialize()
 
